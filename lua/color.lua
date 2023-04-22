@@ -1,30 +1,40 @@
-vim.g.gruvbox_diagnostic_line_highlight = 1
-vim.o.background = 'dark'
-vim.cmd([[colorscheme gruvbox]])
+function ColorMyPencils(color)
+  vim.g.gruvbox_diagnostic_line_highlight = 1
+  vim.o.background = 'dark'
 
-vim.fn.sign_define({
-  {
-    name = 'DiagnosticSignError',
-    text = 'E',
-    texthl = 'DiagnosticSignError',
-    linehl = 'ErrorLine'
-  },
-  {
-    name = 'DiagnosticSignWarn',
-    text = 'W',
-    texthl = 'DiagnosticSignWarn',
-    linehl = 'WarningLine'
-  },
-  {
-    name = 'DiagnosticSignInfo',
-    text = 'I',
-    texthl = 'DiagnosticSignInfo',
-    linehl = 'InfoLine'
-  },
-  {
-    name = 'DiagnosticSignHint',
-    text = 'H',
-    texthl = 'DiagnosticSignHint',
-    linehl = 'HintLine'
-  }
-})
+  color = color or 'gruvbox'
+  -- color = color or 'onedark'
+  vim.cmd.colorscheme(color)
+
+  vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+
+  vim.fn.sign_define({
+    {
+      name = 'DiagnosticSignError',
+      text = '󰀩',
+      texthl = 'DiagnosticSignError',
+      linehl = 'ErrorLine'
+    },
+    {
+      name = 'DiagnosticSignWarn',
+      text = '󰀦',
+      texthl = 'DiagnosticSignWarn',
+      linehl = 'WarningLine'
+    },
+    {
+      name = 'DiagnosticSignInfo',
+      text = '',
+      texthl = 'DiagnosticSignInfo',
+      linehl = 'InfoLine'
+    },
+    {
+      name = 'DiagnosticSignHint',
+      text = '󰸱',
+      texthl = 'DiagnosticSignHint',
+      linehl = 'HintLine'
+    }
+  })
+end
+
+ColorMyPencils()

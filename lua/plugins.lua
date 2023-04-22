@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
     }
   }
   use 'ellisonleao/gruvbox.nvim'
+  -- use 'navarasu/onedark.nvim'
 
   use 'rmagatti/alternate-toggler'
   use 'windwp/nvim-autopairs'
@@ -30,4 +31,25 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
+
+  use 'MattesGroeger/vim-bookmarks'
+  use 'tom-anders/telescope-vim-bookmarks.nvim'
+
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'onsails/lspkind-nvim'
+
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'jose-elias-alvarez/typescript.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
+
+  use('nvim-treesitter/nvim-treesitter', { run = 'TSUpdate' })
+
+  use 'lukas-reineke/indent-blankline.nvim'
+
+  -- use('glepnir/dashboard-nvim', { event = 'VimEnter' })
 end)
